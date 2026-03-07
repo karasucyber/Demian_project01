@@ -128,9 +128,9 @@ export function HeroSection() {
           A essência da arte suave. Defesa pessoal, eficiência e controle absoluto para transformar seu corpo e mente.
         </p>
         
-        <button className="group flex items-center gap-4 bg-white text-black px-8 py-5 text-[11px] font-bold uppercase tracking-widest hover:bg-zinc-200 transition-all duration-300" onClick={() => window.open("https://wa.me/5511945809260", "_blank")}
+        <button className="group flex items-center gap-4 bg-white text-black px-8 py-5 text-[11px] font-bold uppercase tracking-widest hover:bg-zinc-200 transition-all duration-300" onClick={() => window.open("https://evo-totem.w12app.com.br/demianmaia/1/page/landing-page/agenda", "_blank")}
     >
-          Inicie sua jornada
+          Grade de horário
           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </button>
       </div>
@@ -394,7 +394,7 @@ export function FloatingSocialButtons() {
         href="https://wa.me/5511945809260"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-14 h-14 bg-black flex items-center justify-center text-white border border-zinc-800 hover:bg-white hover:text-black hover:border-white transition-all duration-300 shadow-2xl hover:-translate-y-1"
+        className="w-14 h-14 bg-green-500 flex items-center justify-center text-white border border-green-600 hover:bg-green-600 transition-all duration-300 shadow-2xl hover:-translate-y-1 rounded-full"
       >
         <MessageCircle className="h-6 w-6" />
       </a>
