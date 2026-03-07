@@ -9,28 +9,28 @@ export function ClassesSection() {
       title: "Aulas para Adultos",
       description: "Programa completo de Jiu-Jitsu focado em técnica, condicionamento físico e defesa pessoal.",
       image: "https://images.unsplash.com/photo-1734668486909-4637ecd66408?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwYWR1bHQlMjBjbGFzc3xlbnwxfHx8fDE3NjE3ODg1NzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      link: "#adultos"
+      link: "/Adultos"
     },
     {
       id: 2,
       title: "Aulas para Crianças",
       description: "Desenvolvimento motor, disciplina e valores através da prática do Jiu-Jitsu em ambiente seguro.",
       image: "https://images.unsplash.com/photo-1709776193007-b3bdc198f0c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraWRzJTIwbWFydGlhbCUyMGFydHN8ZW58MXx8fHwxNzYxNzU3OTMzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      link: "#criancas"
+      link: "/Kids"
     },
     {
       id: 3,
       title: "Aulas para Mulheres",
       description: "Empoderamento feminino, defesa pessoal e condicionamento físico em turmas exclusivas.",
       image: "https://images.unsplash.com/photo-1573858129683-59f4d9c445d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMGZpdG5lc3MlMjB0cmFpbmluZ3xlbnwxfHx8fDE3NjE3ODg1NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      link: "#mulheres"
+      link: "/Mulheres"
     },
     {
       id: 4,
       title: "Melhor Idade",
       description: "Exercícios adaptados para promover mobilidade, equilíbrio e qualidade de vida.",
       image: "https://images.unsplash.com/photo-1658314755561-389d5660ee54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW5pb3IlMjBmaXRuZXNzfGVufDF8fHx8MTc2MTc4ODU3Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      link: "#idosos"
+      link: "/MaiorIdade"
     }
   ];
 

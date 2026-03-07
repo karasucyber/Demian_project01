@@ -8,11 +8,9 @@ export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Contatos", href: "#contatos" },
-    { name: "Loja", href: "#loja" },
-    { name: "Blog", href: "#blog" },
-    { name: "Filiados", href: "#filiados" },
+      { name: "Home", href: "#home" },
+      { name: "Professores", href: "/nossosprofessores" },
+      { name: "Filiados", href: "#filiados" }
   ];
 
   return (
