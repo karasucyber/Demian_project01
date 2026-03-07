@@ -319,9 +319,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           
          <div className="lg:col-span-2">
-  <div className="w-28 h-28 bg-white p-4 flex items-center justify-center rounded-2xl  transition-transform duration-500 mb-6 shadow-xl">
+  <div className="w-50 h-50 p-4 flex items-center justify-center rounded-2xl  transition-transform duration-500 mb-6 shadow-xl">
     <img 
-      src="images.png" 
+      src="logo Demian Maia 3 Branco.png" 
       alt="Logo DM" 
       className="w-full h-full object-contain" 
     />
