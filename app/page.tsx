@@ -4,11 +4,13 @@ import React, { useState, useEffect } from "react";
 import {
   Menu, X, Award, Users, Trophy, Dumbbell,
   Shield, Brain, Instagram, ArrowRight,
-  Phone, MapPin, Youtube, MessageCircle, ChevronRight
+  Phone, MapPin, Youtube, MessageCircle, ChevronRight,
+  Calendar
 } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Card } from "./components/ui/card";
 import { ImageWithFallback } from "./components/ImageWithFallback";
+
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -31,13 +33,13 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
             <a href="#home" className="flex items-center gap-4 group">
-         <div className="w-12 h-12 flex items-center justify-center rounded-sm transform group-hover:rotate-3 transition-transform duration-500">
-  <img 
-    src="images.png" 
-    alt="Logo DM" 
-    className="w-full h-full object-contain" 
-  />
-</div>
+              <div className="w-12 h-12 flex items-center justify-center rounded-sm transform group-hover:rotate-3 transition-transform duration-500">
+                <img 
+                  src="images.png" 
+                  alt="Logo DM" 
+                  className="w-full h-full object-contain" 
+                />
+              </div>
               <div className={`hidden sm:block transition-colors duration-300 ${scrolled ? "text-black" : "text-white"}`}>
                 <div className="font-extrabold tracking-tight text-lg leading-none">ESCOLA DEMIAN</div>
                 <div className="text-[9px] font-bold uppercase tracking-[0.3em] mt-1 opacity-80">Jiu-Jitsu Academy</div>
@@ -57,14 +59,14 @@ export function Navbar() {
             ))}
           </div>
 
-      <div className="hidden md:block">
-  <Button 
-    onClick={() => window.open("https://wa.me/5511945809260", "_blank")}
-    className={`text-[11px] font-bold uppercase tracking-widest px-8 py-6 rounded-none transition-all duration-500 ${scrolled ? "bg-black text-white hover:bg-zinc-800" : "bg-white text-black hover:bg-zinc-200"}`}
-  >
-    Agendar Aula
-  </Button>
-</div>
+          <div className="hidden md:block">
+            <Button 
+              onClick={() => window.open("https://wa.me/5511945809260", "_blank")}
+              className={`text-[11px] font-bold uppercase tracking-widest px-8 py-6 rounded-none transition-all duration-500 ${scrolled ? "bg-black text-white hover:bg-zinc-800" : "bg-white text-black hover:bg-zinc-200"}`}
+            >
+              Agendar Aula
+            </Button>
+          </div>
 
           <button
             className={`md:hidden p-2 transition-colors ${scrolled ? "text-black" : "text-white"}`}
@@ -86,14 +88,14 @@ export function Navbar() {
                 {item.name}
               </a>
             ))}
-<div className="hidden md:block">
-  <Button 
-    onClick={() => window.open("https://wa.me/5511945809260", "_blank")}
-    className={`text-[11px] font-bold uppercase tracking-widest px-8 py-6 rounded-none transition-all duration-500 ${scrolled ? "bg-black text-white hover:bg-zinc-800" : "bg-white text-black hover:bg-zinc-200"}`}
-  >
-    Agendar Aula
-  </Button>
-</div>
+            <div className="hidden md:block">
+              <Button 
+                onClick={() => window.open("https://wa.me/5511945809260", "_blank")}
+                className={`text-[11px] font-bold uppercase tracking-widest px-8 py-6 rounded-none transition-all duration-500 ${scrolled ? "bg-black text-white hover:bg-zinc-800" : "bg-white text-black hover:bg-zinc-200"}`}
+              >
+                Agendar Aula
+              </Button>
+            </div>
           </div>
         )}
       </div>
@@ -128,8 +130,7 @@ export function HeroSection() {
           A essência da arte suave. Defesa pessoal, eficiência e controle absoluto para transformar seu corpo e mente.
         </p>
         
-        <button className="group flex items-center gap-4 bg-white text-black px-8 py-5 text-[11px] font-bold uppercase tracking-widest hover:bg-zinc-200 transition-all duration-300" onClick={() => window.open("https://evo-totem.w12app.com.br/demianmaia/1/page/landing-page/agenda", "_blank")}
-    >
+        <button className="group flex items-center gap-4 bg-white text-black px-8 py-5 text-[11px] font-bold uppercase tracking-widest hover:bg-zinc-200 transition-all duration-300" onClick={() => window.open("https://evo-totem.w12app.com.br/demianmaia/1/page/landing-page/agenda", "_blank")}>
           Grade de horário
           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
         </button>
@@ -140,25 +141,36 @@ export function HeroSection() {
 
 export function StatsSection() {
   const stats = [
-    { id: 1, icon: Users, value: "2.5k", label: "Alunos" },
-    { id: 2, icon: Award, value: "15+", label: "Anos" },
-    { id: 3, icon: Trophy, value: "500", label: "Títulos" },
-    { id: 4, icon: Dumbbell, value: "1.2k", label: "Metros²" }
+    { id: 1, icon: Users, value: "600+", label: "Alunos Ativos" },
+    { id: 2, icon: Award, value: "15+", label: "Anos de Excelência" },
+    { id: 3, isGoogleLogo: true, value: "98%", label: "Satisfação" },
+    { id: 4, icon: Calendar, value: "20+", label: "Aulas por Semana" },
+    { id: 5, icon: Trophy, value: "100+", label: "Títulos Conquistados" },
+    { id: 6, icon: Dumbbell, value: "1200m²", label: "Área de Treino" }
   ];
 
   return (
     <section className="border-b border-zinc-200 bg-white">
       <div className="container mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-zinc-200">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-x divide-y md:divide-y-0 divide-zinc-200">
           {stats.map((stat) => {
             const Icon = stat.icon;
             return (
-              <div key={stat.id} className="p-12 flex flex-col items-center justify-center text-center group hover:bg-zinc-50 transition-colors duration-500">
-                <Icon className="h-6 w-6 text-zinc-300 mb-4 group-hover:text-black transition-colors duration-500" />
-                <div className="text-4xl md:text-5xl font-extrabold text-black tracking-tighter mb-2">
+              <div key={stat.id} className="p-10 flex flex-col items-center justify-center text-center group hover:bg-zinc-50 transition-colors duration-500">
+                {stat.isGoogleLogo ? (
+                  <svg className="h-6 w-6 mb-4 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                  </svg>
+                ) : (
+                  Icon && <Icon className="h-6 w-6 text-zinc-300 mb-4 group-hover:text-black transition-colors duration-500" />
+                )}
+                <div className="text-3xl md:text-4xl font-extrabold text-black tracking-tighter mb-2">
                   {stat.value}
                 </div>
-                <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                <p className="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">
                   {stat.label}
                 </p>
               </div>
@@ -233,6 +245,23 @@ export function PhilosophySection() {
   );
 }
 
+export function ProgramsSection() {
+  return (
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="bg-black text-white rounded-2xl p-10 md:p-14 flex flex-col items-center text-center max-w-5xl mx-auto shadow-2xl">
+          <h3 className="text-2xl md:text-3xl font-extrabold tracking-tighter mb-4 uppercase">
+            Jiu-Jitsu Para Todas as Idades
+          </h3>
+          <p className="text-zinc-300 text-lg font-light max-w-3xl leading-relaxed">
+            Oferecemos turmas exclusivas com metodologias adaptadas para <strong className="text-white font-bold">Adultos</strong>, <strong className="text-white font-bold">Crianças</strong> e <strong className="text-white font-bold">Melhor Idade</strong>. O tatame é um ambiente de evolução constante e seguro para todos.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function InstructorsSection() {
   const instructors = [
     { id: 1, imageUrl: "/NelsonLopes.jpg", name: "Nelson Lopes", belt: "Faixa Preta 3º Grau" },
@@ -242,7 +271,7 @@ export function InstructorsSection() {
   ];
 
   return (
-    <section className="py-32 bg-white">
+    <section className="py-32 bg-zinc-50">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div>
@@ -318,29 +347,24 @@ export function Footer() {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           
-         <div className="lg:col-span-2">
-  <div className="w-50 h-50 p-4 flex items-center justify-center rounded-2xl  transition-transform duration-500 mb-6 shadow-xl">
-    <img 
-      src="logo Demian Maia 3 Branco.png" 
-      alt="Logo DM" 
-      className="w-full h-full object-contain" 
-    />
-  </div>
-  {/* <div className="text-[10px] text-zinc-500 font-bold uppercase tracking-[0.3em] mb-8">
-    Jiu-Jitsu Academy
-  </div> */}
-  <p className="text-zinc-400 font-light text-sm max-w-sm mb-8 leading-relaxed">
-    Alta performance, disciplina e excelência técnica. Forjando campeões no tatame e na vida desde 2008.
-  </p>
-  <div className="flex gap-4">
-    <a href="#" className="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:bg-white hover:text-black transition-all">
-      <Instagram className="h-4 w-4" />
-    </a>
-    <a href="#" className="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:bg-white hover:text-black transition-all">
-      <Youtube className="h-4 w-4" />
-    </a>
-  </div>
-</div>
+          <div className="lg:col-span-2">
+            <div className="w-48 h-48 p-4 flex items-center justify-center rounded-2xl transition-transform duration-500 mb-6 shadow-xl">
+              <img 
+                src="logo Demian Maia 3 Branco.png" 
+                alt="Logo DM" 
+                className="w-full h-full object-contain" 
+              />
+            </div>
+            
+            <p className="text-zinc-400 font-light text-sm max-w-sm mb-8 leading-relaxed">
+              Alta performance, disciplina e excelência técnica. Forjando campeões no tatame e na vida desde 2008.
+            </p>
+            <div className="flex gap-4">
+              <a href="https://www.instagram.com/escolademianmaia/" className="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                <Instagram className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
 
           <div>
             <h3 className="font-bold text-[10px] uppercase tracking-[0.2em] text-zinc-500 mb-8">Navegação</h3>
@@ -409,6 +433,7 @@ export default function DemianLandingPage() {
       <HeroSection />
       <StatsSection />
       <PhilosophySection />
+      <ProgramsSection />
       <InstructorsSection />
       <CTASection />
       <Footer />

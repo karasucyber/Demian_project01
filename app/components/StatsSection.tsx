@@ -6,7 +6,7 @@ export function StatsSection() {
     {
       id: 1,
       icon: Users,
-      value: "2.500+",
+      value: "1200+",
       label: "Alunos Ativos"
     },
     {
@@ -30,7 +30,7 @@ export function StatsSection() {
     {
       id: 5,
       icon: Trophy,
-      value: "500+",
+      value: "100+",
       label: "Títulos Conquistados"
     },
     {
