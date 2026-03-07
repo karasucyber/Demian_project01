@@ -29,7 +29,3 @@ export function FloatingSocialButtons() {
   );
 }
 
-
-import { Button } from "./components/ui/button";
-import { Card } from "./components/ui/card";
-import { ImageWithFallback } from "./components/ImageWithFallback";
