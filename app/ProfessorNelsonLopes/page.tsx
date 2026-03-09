@@ -7,32 +7,31 @@ import { useState } from "react";
 export default function App() {
   const [hoveredAchievement, setHoveredAchievement] = useState<number | null>(null);
 
- const instructor = {
-  name: "Nelson de Souza Lopes",
-  belt: "Faixa Preta - 3º Grau",
-  image: "NelsonLopes.jpg",
-  yearsExperience: 23,
-  championships: 14,
-  students: 250,
-  specialties: ["Defesa Pessoal", "Jiu Jitsu Competitivo", "Fundamentos", "Técnicas Avançadas"],
-  location: "São Paulo, Brasil",
-  quote: "Ninguém é tão grande que não possa aprender, nem tão pequeno que não possa ensinar.",
-  trajectory: [
-    { year: "2003", title: "O Início", description: "Iniciou sua jornada no Jiu Jitsu buscando autodesenvolvimento." },
-    { year: "2006", title: "Primeiras Aulas", description: "Começou a ministrar aulas ainda como faixa azul, descobrindo sua vocação para o ensino." },
-    { year: "2016", title: "Equipe Demian Maia", description: "Ingressou na equipe e iniciou sua trajetória como professor da casa." },
-    { year: "2017", title: "Glória Mundial", description: "Consagrou-se Campeão Mundial pela primeira vez (CBJJE)." },
-    { year: "2025", title: "Liderança e Gestão", description: "Torna-se sócio-gerente da escola e conquista o título de Campeão Brasileiro (CBJJ)." }
-  ],
-  achievements: [
-    { title: "Campeão Brasileiro CBJJ", year: "2025", category: "Master / Kimono" },
-    { title: "Bicampeão Mundial CBJJE", year: "2017-2022", category: "Peso Médio" },
-    { title: "Campeão SP Open CBJJ", year: "2025", category: "Kimono e No-Gi" },
-    { title: "Hexacampeão Paulista FPJJ", year: "2016-2023", category: "Absoluto" },
-    { title: "Campeão AJP PRO", year: "2019", category: "International Pro" }
-  ],
-  bio: "Praticante de Jiu Jitsu desde 2003, Nelson une a precisão de sua carreira como engenheiro à arte suave. Sua trajetória o levou a treinar em algumas das maiores equipes do mundo, como Checkmat e Atos, até consolidar sua liderança na Escola Demian Maia. Hoje, como sócio e professor, ele foca em transmitir uma metodologia que une técnica de elite e desenvolvimento humano."
-};
+  const instructor = {
+    name: "Nelson de Souza Lopes",
+    belt: "Faixa Preta 3º Grau",
+    image: "NelsonLopes.jpg",
+    yearsExperience: 23,
+    championships: 14,
+    students: 250,
+    specialties: ["Defesa Pessoal", "Jiu-Jitsu para Competição", "Fundamentos", "Técnicas Avançadas"],
+    location: "São Paulo, Brasil",
+    quote: "“Ninguém é tão grande que não possa aprender, nem tão pequeno que não possa ensinar.” ESOPO",
+    trajectory: [
+      { year: "2003", title: "O Início", description: "Pratico Jiu-Jitsu desde 2003. Minha carreira como engenheiro me levou a diferentes cidades e, com isso, tive a chance de treinar em algumas das maiores equipes do mundo, como Checkmat, Atos e Gracie Barra." },
+      { year: "2006", title: "Início no Ensino", description: "Ministro aulas de Jiu Jitsu desde a minha faixa azul em 2006." },
+      { year: "2016", title: "Escola Demian Maia", description: "Em 2016, por influência da minha esposa, cheguei à equipe Demian Maia. Entrei como aluno, me tornei professor e, hoje, tenho a honra de ser um dos sócios da escola." }
+    ],
+    achievements: [
+      { title: "Campeão Brasileiro de kimono CBJJ", year: "2025", category: "Kimono" },
+      { title: "Campeão Mundial CBJJE", year: "2017, 2022", category: "Mundial" },
+      { title: "Campeão do AJP PRO", year: "2019", category: "AJP PRO" },
+      { title: "Campeão SP Open Kimono e Sem Kimono", year: "2025", category: "CBJJ" },
+      { title: "Campeão Paulista FPJJ", year: "2016, 2017, 2019, 2020, 2021, 2023", category: "FPJJ" },
+      { title: "Campeão Paulista Sem Kimono", year: "2014, 2021", category: "Sem Kimono" }
+    ],
+    bio: "Pratico Jiu-Jitsu desde 2003. Minha carreira como engenheiro me levou a diferentes cidades e, com isso, tive a chance de treinar em algumas das maiores equipes do mundo, como Checkmat, Atos e Gracie Barra. Em 2016, por influência da minha esposa, cheguei à equipe Demian Maia. Entrei como aluno, me tornei professor e, hoje, tenho a honra de ser um dos sócios da escola."
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -52,7 +51,7 @@ export default function App() {
             <div className="lg:col-span-7 pt-12">
               <div className="flex items-center gap-3 mb-8">
                 <div className="h-px w-12 bg-white"></div>
-                <span className="text-gray-400 tracking-wider">PROFESSOR</span>
+                <span className="text-gray-400 tracking-wider">SÓCIO, GERENTE E PROFESSOR</span>
               </div>
               
               <h1 className="text-white mb-6">
@@ -199,7 +198,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {instructor.trajectory.map((milestone, idx) => (
               <div key={idx} className="group">
-                <div className="bg-white p-8 border border-gray-200 hover:border-black hover:shadow-2xl transition-all duration-300 relative">
+                <div className="bg-white p-8 border border-gray-200 hover:border-black hover:shadow-2xl transition-all duration-300 relative h-full">
                   {/* Year Badge */}
                   <div className="absolute -top-4 left-8 bg-black text-white px-4 py-1">
                     <span>{milestone.year}</span>
@@ -233,7 +232,7 @@ export default function App() {
             </div>
             <h2 className="text-white mb-4">Títulos Conquistados</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Uma carreira marcada por conquistas em competições nacionais e internacionais
+              Uma carreira marcada por conquistas em competições nacionais e regionais
             </p>
           </div>
 

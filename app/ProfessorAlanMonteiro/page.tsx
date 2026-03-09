@@ -7,30 +7,30 @@ import { useState } from "react";
 export default function App() {
   const [hoveredAchievement, setHoveredAchievement] = useState<number | null>(null);
 
-const instructor = {
-  name: "Alan Monteiro (Shock)",
-  belt: "Faixa Roxa",
-  image: "AlanShock.jpg",
-  yearsExperience: 14, // Iniciou em 2012
-  championships: 18,
-  students: 110,
-  specialties: ["MMA & Grappling", "Muay Thai / Kickboxing", "Condicionamento Físico", "Defesa Pessoal Prática"],
-  location: "São Paulo, Brasil",
-  quote: "De todas as artes marciais que já fiz, o Jiu-Jitsu é a que mais me fascina, pois é a que mais me desafia.",
-  trajectory: [
-    { year: "2012", title: "A Transição", description: "Vindo de uma base sólida no Judô, iniciou sua caminhada no Jiu-Jitsu." },
-    { year: "2018", title: "Entrada no Elite Team", description: "Ingressou na Escola Demian Maia através do circuito de MMA profissional." },
-    { year: "Atual", title: "Multidisciplinar", description: "Formado em Educação Física, tornou-se especialista em cruzar técnicas de luta." },
-    { year: "Hoje", title: "Liderança Técnica", description: "Líder de equipe e instrutor focado em fundamentos e intermediários." }
-  ],
-  achievements: [
-    { title: "Lutador Profissional de MMA", year: "Ativo", category: "Combate de Elite" },
-    { title: "Campeão Internacional Kickboxing", year: "WGP", category: "Striking de Alto Nível" },
-    { title: "Campeão Brasileiro Muay Thai", year: "CBMT", category: "Nacional" },
-    { title: "Especialista em Performance", year: "Ed. Física", category: "Preparação de Atletas" }
-  ],
-  bio: "Alan 'Shock' Monteiro traz a intensidade do combate profissional para o tatame da Escola Demian Maia. Profissional de Educação Física e lutador de MMA, Alan é mestre em integrar o Jiu-Jitsu com técnicas de striking (Muay Thai e Kickboxing). Sua abordagem é focada na eficiência real do combate e no condicionamento físico de alta performance, sendo o instrutor ideal para quem busca superar limites físicos e técnicos."
-};
+  const instructor = {
+    name: "Alan Monteiro da Silva",
+    belt: "Faixa Roxa",
+    image: "AlanShock.jpg",
+    yearsExperience: 14,
+    championships: 4,
+    students: 110,
+    specialties: ["Defesa Pessoal", "Fundamentos", "Competição", "Muay Thai / Kickboxing"],
+    location: "São Paulo, Brasil",
+    quote: "De todas as artes marciais que já fiz, o jiu-jitsu é a que mais me fascina, pois é a que mais me desafia!!!",
+    trajectory: [
+      { year: "2012", title: "O Início no Jiu-Jitsu", description: "Comecei o jiu-jitsu em 2012 após fazer judô por anos, treinando até 2018 no Jaraguá com o professor faixa preta Vagner Miguel." },
+      { year: "2018", title: "Equipe Demian Maia", description: "Através das competições de MMA no ano de 2018, me tornei parte da equipe Demian Maia Jiu-Jitsu." },
+      { year: "Atual", title: "Experiência como Professor", description: "Vem desde os 15 anos quando comecei a auxiliar em aulas infantis e juvenis. Sou formado em Educação Física, Grau Preto de Muay Thai e Faixa Preta de Kickboxing." },
+      { year: "Hoje", title: "Liderança", description: "Sou líder de uma equipe e professor em outras duas equipes, além de instrutor de fundamentos e intermediário na Escola." }
+    ],
+    achievements: [
+      { title: "Lutador profissional", year: "Ativo", category: "MMA" },
+      { title: "Campeão Paulista", year: "Recente", category: "Kickboxing" },
+      { title: "Campeão Brasileiro", year: "Recente", category: "Muay Thai" },
+      { title: "Campeão Internacional", year: "Recente", category: "Kickboxing" }
+    ],
+    bio: "Comecei o jiu-jitsu em 2012 após fazer judô por anos. Em 2018, através das competições de MMA, me tornei parte da equipe Demian Maia. Minha experiência como professor vem desde os 15 anos. Sou formado em educação física, grau preto de Muay Thai, faixa preta de kickboxing, líder de uma equipe e professor em outras duas, trazendo essa bagagem multidisciplinar para os tatames."
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -50,7 +50,7 @@ const instructor = {
             <div className="lg:col-span-7 pt-12">
               <div className="flex items-center gap-3 mb-8">
                 <div className="h-px w-12 bg-white"></div>
-                <span className="text-gray-400 tracking-wider">PROFESSOR</span>
+                <span className="text-gray-400 tracking-wider">INSTRUTOR E LUTADOR PROFISSIONAL</span>
               </div>
               
               <h1 className="text-white mb-6">
@@ -69,11 +69,11 @@ const instructor = {
               <div className="grid grid-cols-3 gap-4 mb-12">
                 <div className="bg-white/10 backdrop-blur-sm p-6 border border-white/20">
                   <div className="text-white mb-2">{instructor.championships}</div>
-                  <div className="text-gray-400">Títulos</div>
+                  <div className="text-gray-400">Títulos Principais</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm p-6 border border-white/20">
                   <div className="text-white mb-2">{instructor.yearsExperience}</div>
-                  <div className="text-gray-400">Anos de jiu jitsu</div>
+                  <div className="text-gray-400">Anos de Luta</div>
                 </div>
               </div>
 
@@ -110,8 +110,8 @@ const instructor = {
                   <div className="flex items-center gap-3">
                     <Star className="w-6 h-6 text-black" />
                     <div>
-                      <div className="text-black">Referência Nacional</div>
-                      <div className="text-gray-500">Jiu Jitsu Competitivo</div>
+                      <div className="text-black">Multidisciplinar</div>
+                      <div className="text-gray-500">MMA e Jiu-Jitsu</div>
                     </div>
                   </div>
                 </div>
@@ -156,8 +156,7 @@ const instructor = {
               </div>
               <h2 className="text-black mb-6">Áreas de Domínio</h2>
               <p className="text-gray-600 leading-relaxed">
-                Experiência comprovada nas principais vertentes do Jiu Jitsu, com metodologia 
-                única desenvolvida ao longo de décadas de prática e ensino.
+                Experiência comprovada nas principais vertentes do combate, atuando como instrutor de fundamentos e intermediário, com uma base forte em diversas artes marciais.
               </p>
             </div>
 
@@ -194,10 +193,10 @@ const instructor = {
             <h2 className="text-black">Jornada de Evolução</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {instructor.trajectory.map((milestone, idx) => (
               <div key={idx} className="group">
-                <div className="bg-white p-8 border border-gray-200 hover:border-black hover:shadow-2xl transition-all duration-300 relative">
+                <div className="bg-white p-8 border border-gray-200 hover:border-black hover:shadow-2xl transition-all duration-300 relative h-full">
                   {/* Year Badge */}
                   <div className="absolute -top-4 left-8 bg-black text-white px-4 py-1">
                     <span>{milestone.year}</span>
@@ -209,7 +208,7 @@ const instructor = {
                   </div>
                   
                   <h3 className="text-black mb-3">{milestone.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm">{milestone.description}</p>
 
                   {/* Decorative Corner */}
                   <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-black opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -229,9 +228,9 @@ const instructor = {
               <span className="text-gray-400 tracking-wider">CONQUISTAS</span>
               <div className="h-px w-12 bg-white"></div>
             </div>
-            <h2 className="text-white mb-4">Títulos Conquistados</h2>
+            <h2 className="text-white mb-4">Títulos de Destaque</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Uma carreira marcada por conquistas em competições nacionais e internacionais
+              Uma trajetória vitoriosa em múltiplas modalidades de combate, do Jiu-Jitsu ao Kickboxing e MMA.
             </p>
           </div>
 
@@ -271,19 +270,19 @@ const instructor = {
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Award className="w-16 h-16 mx-auto mb-8 text-white" />
-          <h2 className="text-white mb-6">Treine com um Mestre</h2>
+          <h2 className="text-white mb-6">Treine com um Instrutor Completo</h2>
           <p className="text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Faça parte de uma academia que forma campeões dentro e fora do tatame. 
-            Agende sua aula experimental e comece sua jornada no Jiu Jitsu.
+            Faça parte de uma academia que foca em fundamentos sólidos e resultados práticos. 
+            Agende sua aula experimental e evolua no tatame.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-black px-10 py-4 hover:bg-gray-100 transition-all flex items-center gap-3 group">
+            <button className="bg-white text-black px-10 py-4 hover:bg-gray-100 transition-all flex items-center gap-3 group" onClick={() => window.open("https://wa.me/5511945809260", "_blank")}>
               <span>Agendar Aula Experimental</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="border-2 border-white text-white px-10 py-4 hover:bg-white hover:text-black transition-all">
-              Saiba Mais
+            <button className="border-2 border-white text-white px-10 py-4 hover:bg-white hover:text-black transition-all" onClick={() => window.open("https://wa.me/5511945809260", "_blank")}>
+              Falar no WhatsApp
             </button>
           </div>
         </div>

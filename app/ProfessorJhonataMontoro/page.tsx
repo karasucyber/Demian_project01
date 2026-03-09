@@ -7,38 +7,34 @@ import { useState } from "react";
 export default function App() {
   const [hoveredAchievement, setHoveredAchievement] = useState<number | null>(null);
 
-const instructor = {
-  name: "Jhonata Montoro de Souza",
-  belt: "Faixa Marrom",
-  image: "JhonataMontoro.jpg",
-  yearsExperience: 11,
-  championships: 14, 
-  students: 150,
-  specialties: ["Alto Rendimento", "Jiu-Jitsu Avançado", "Formação de Base (Kids)", "Instrução Personalizada"],
-  location: "São Paulo, Brasil",
-  quote: "Minha missão é forjar a mentalidade de um campeão em cada aluno que pisa no meu tatame, transformando técnica em excelência.",
-  trajectory: [
-    { year: "2013", title: "Formação de Base", description: "Início da trajetória como aluno direto de Demian Maia, absorvendo a metodologia da fonte." },
-    { year: "2018", title: "Consagração Nacional", description: "Campeão Brasileiro CBJJ, consolidando-se entre os melhores do país." },
-    { year: "2020", title: "Dinastia Mundial", description: "Início de uma sequência histórica de títulos mundiais pela CBJJE." },
-    { year: "2024", title: "Pentacampeonato", description: "Alcança a marca lendária de 5 títulos mundiais consecutivos." },
-    { year: "Hoje", title: "Transmissão de Legado", description: "Professor da Escola Demian Maia focado em desenvolver campeões dentro e fora do tatame." }
-  ],
-  achievements: [
-    { title: "PENTACAMPEÃO MUNDIAL", year: "2020 a 2024", category: "Domínio absoluto na categoria e absoluto" },
-    { title: "Campeão Brasileiro CBJJ", year: "2018", category: "Ouro na principal federação do país" },
-    { title: "Campeão Brasileiro CBJJE", year: "2020", category: "Destaque técnico nacional" },
-    { title: "7x Campeão Paulista", year: "Diversos", category: "Referência no cenário estadual" },
-    { title: "Metodologia Demian Maia", year: "11 Anos", category: "Fidelidade e domínio da técnica" }
-  ],
-  bio: "Com 11 anos de casa e sob a tutela direta de Demian Maia, Jhonata Montoro personifica a evolução técnica da nossa escola. Sua trajetória é marcada por uma dominância rara nas competições, sendo Pentacampeão Mundial consecutivo. Hoje, ele atua como professor das turmas Kids e adultos, oferecendo também instrução personalizada para aqueles que buscam acelerar seu desenvolvimento com o refinamento técnico de um campeão mundial."
-};
+  const instructor = {
+    name: "Jhonata Montoro de Souza",
+    belt: "Faixa-marrom de Jiu-Jitsu Brasileiro",
+    image: "JhonataMontoro.jpg",
+    yearsExperience: 11,
+    championships: 22,
+    students: 150,
+    specialties: ["Aulas particulares", "Aulas para adultos e crianças", "Fundamentos do Jiu-Jitsu", "Jiu-Jitsu avançado", "Jiu-Jitsu para competição"],
+    location: "São Paulo, Brasil",
+    quote: "“O Jiu-Jitsu mudou a minha vida. Por muitos anos me dediquei às competições, onde vivi inúmeras experiências e conquistei grandes títulos. Hoje, meu maior entusiasmo é treinar campeões — campeões no Jiu-Jitsu e campeões na vida. Pois só esses me contratam, e os que ainda não foram campeões, ainda vão ser. O meu trabalho é dar condição para isso.”",
+    trajectory: [
+      { year: "Base", title: "Raízes Fortes", description: "Aluno de Demian Maia há 11 anos, vivendo intensamente o esporte em alto nível e construindo uma sólida formação técnica." },
+      { year: "Competidor", title: "Foco Exclusivo", description: "Dedicou anos exclusivamente às competições, acumulando vasta experiência e dezenas de títulos importantes." },
+      { year: "Ensino", title: "A Arte de Evoluir", description: "Com 5 anos de experiência como professor na Escola Demian Maia, utiliza a arte suave como ferramenta de desenvolvimento pessoal." },
+      { year: "Hoje", title: "Formando Campeões", description: "Atua como professor particular e de turmas infantis (Kids), focado em dar condições para que seus alunos alcancem a excelência." }
+    ],
+    achievements: [
+      { title: "Pentacampeão Mundial CBJJE", year: "2020 a 2024", category: "Mundial" },
+      { title: "Campeão AJP Grand Slam Rio", year: "2023 e 2024", category: "Profissional" },
+      { title: "Campeão Brasileiro", year: "CBJJ e CBJJE", category: "Nacional" },
+      { title: "7x Campeão Paulista", year: "Múltiplos", category: "Estadual" }
+    ],
+    bio: "Jhonata Montoro de Souza iniciou sua trajetória no Jiu-Jitsu ainda jovem e é aluno de Demian Maia há 11 anos. Ao longo desse período, construiu uma sólida formação técnica e competitiva, vivendo intensamente o esporte em alto nível. Possui 5 anos de experiência como professor na Escola Demian Maia, atuando diretamente no ensino do Jiu-Jitsu para diferentes perfis de alunos. Seu trabalho vai além da técnica, utilizando o Jiu-Jitsu como ferramenta de desenvolvimento pessoal, construção de confiança, disciplina e excelência dentro e fora do tatame. Após anos dedicados exclusivamente às competições, hoje encontra no treinamento um dos seus maiores entusiasmos: dar condições para que seus alunos se vejam e se tornem campeões, dentro e fora do tatame."
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section - Assimétrico */}
       <section className="relative min-h-screen bg-black overflow-hidden">
-        {/* Grid Background */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
@@ -48,11 +44,10 @@ const instructor = {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left Content */}
             <div className="lg:col-span-7 pt-12">
               <div className="flex items-center gap-3 mb-8">
                 <div className="h-px w-12 bg-white"></div>
-                <span className="text-gray-400 tracking-wider">PROFESSOR</span>
+                <span className="text-gray-400 tracking-wider">PROFESSOR PARTICULAR E KIDS</span>
               </div>
               
               <h1 className="text-white mb-6">
@@ -67,21 +62,20 @@ const instructor = {
                 {instructor.bio}
               </p>
 
-              {/* Stats Cards */}
               <div className="grid grid-cols-3 gap-4 mb-12">
                 <div className="bg-white/10 backdrop-blur-sm p-6 border border-white/20">
                   <div className="text-white mb-2">{instructor.championships}</div>
-                  <div className="text-gray-400">Títulos</div>
+                  <div className="text-gray-400">Ouros Mapeados</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm p-6 border border-white/20">
                   <div className="text-white mb-2">{instructor.yearsExperience}</div>
-                  <div className="text-gray-400">Anos de jiu jitsu</div>
+                  <div className="text-gray-400">Anos com DM</div>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <button className="bg-white text-black px-8 py-4 hover:bg-gray-100 transition-all flex items-center gap-2 group">
-                  <span>Agendar Aula</span>
+                <button className="bg-white text-black px-8 py-4 hover:bg-gray-100 transition-all flex items-center gap-2 group" onClick={() => window.open("https://wa.me/5511940007587", "_blank")}>
+                  <span>Falar no WhatsApp</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <div className="flex items-center gap-2 text-gray-400">
@@ -91,10 +85,8 @@ const instructor = {
               </div>
             </div>
 
-            {/* Right Image */}
             <div className="lg:col-span-5">
               <div className="relative">
-                {/* Decorative Elements */}
                 <div className="absolute -top-8 -right-8 w-32 h-32 border border-white/20"></div>
                 <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white/5"></div>
                 
@@ -107,13 +99,12 @@ const instructor = {
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                 </div>
 
-                {/* Floating Badge */}
                 <div className="absolute -bottom-6 left-8 bg-white p-6 shadow-2xl">
                   <div className="flex items-center gap-3">
                     <Star className="w-6 h-6 text-black" />
                     <div>
-                      <div className="text-black">Referência Nacional</div>
-                      <div className="text-gray-500">Jiu Jitsu Competitivo</div>
+                      <div className="text-black">Atleta de Elite</div>
+                      <div className="text-gray-500">Múltiplos Títulos</div>
                     </div>
                   </div>
                 </div>
@@ -122,14 +113,12 @@ const instructor = {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/60 flex flex-col items-center gap-2">
           <span className="text-sm tracking-wider">ROLE PARA BAIXO</span>
           <div className="w-px h-16 bg-gradient-to-b from-white/60 to-transparent"></div>
         </div>
       </section>
 
-      {/* Quote Section - Full Width */}
       <section className="relative py-32 bg-gray-900">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -146,11 +135,9 @@ const instructor = {
         </div>
       </section>
 
-      {/* Specialties Section - Modern Grid */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Left - Title */}
             <div className="flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-12 bg-black"></div>
@@ -158,12 +145,10 @@ const instructor = {
               </div>
               <h2 className="text-black mb-6">Áreas de Domínio</h2>
               <p className="text-gray-600 leading-relaxed">
-                Experiência comprovada nas principais vertentes do Jiu Jitsu, com metodologia 
-                única desenvolvida ao longo de décadas de prática e ensino.
+                Especialista em construir a base técnica em crianças e lapidar os detalhes finos do jogo para atletas e alunos focados em alta performance.
               </p>
             </div>
 
-            {/* Right - Specialties Grid */}
             <div className="grid grid-cols-2 gap-4">
               {instructor.specialties.map((specialty, idx) => (
                 <div key={idx} className="group relative overflow-hidden bg-gray-50 p-8 border border-gray-200 hover:border-black transition-all duration-500">
@@ -181,9 +166,7 @@ const instructor = {
         </div>
       </section>
 
-      {/* Trajectory - Timeline Moderna */}
       <section className="py-24 bg-gray-100 relative overflow-hidden">
-        {/* Decorative Line */}
         <div className="absolute left-0 top-1/2 w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -196,24 +179,21 @@ const instructor = {
             <h2 className="text-black">Jornada de Evolução</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {instructor.trajectory.map((milestone, idx) => (
               <div key={idx} className="group">
-                <div className="bg-white p-8 border border-gray-200 hover:border-black hover:shadow-2xl transition-all duration-300 relative">
-                  {/* Year Badge */}
+                <div className="bg-white p-8 border border-gray-200 hover:border-black hover:shadow-2xl transition-all duration-300 relative h-full">
                   <div className="absolute -top-4 left-8 bg-black text-white px-4 py-1">
                     <span>{milestone.year}</span>
                   </div>
                   
-                  {/* Number */}
                   <div className="text-gray-200 group-hover:text-gray-300 text-6xl mb-4 transition-colors">
                     {String(idx + 1).padStart(2, '0')}
                   </div>
                   
                   <h3 className="text-black mb-3">{milestone.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm">{milestone.description}</p>
 
-                  {/* Decorative Corner */}
                   <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-black opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
               </div>
@@ -222,7 +202,6 @@ const instructor = {
         </div>
       </section>
 
-      {/* Achievements - Interactive Cards */}
       <section className="py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
@@ -233,7 +212,7 @@ const instructor = {
             </div>
             <h2 className="text-white mb-4">Títulos Conquistados</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Uma carreira marcada por conquistas em competições nacionais e internacionais
+              Uma carreira lendária marcada por pódios nos maiores campeonatos de Jiu-Jitsu.
             </p>
           </div>
 
@@ -257,7 +236,6 @@ const instructor = {
                 </h3>
                 <p className="text-gray-400">{achievement.category}</p>
 
-                {/* Hover Effect */}
                 <div className={`absolute bottom-0 left-0 h-1 bg-white transition-all duration-300 ${hoveredAchievement === idx ? 'w-full' : 'w-0'}`}></div>
               </div>
             ))}
@@ -265,7 +243,6 @@ const instructor = {
         </div>
       </section>
 
-      {/* CTA Section - Bold */}
       <section className="relative py-32 bg-black overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
@@ -273,19 +250,19 @@ const instructor = {
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Award className="w-16 h-16 mx-auto mb-8 text-white" />
-          <h2 className="text-white mb-6">Treine com um Mestre</h2>
+          <h2 className="text-white mb-6">Treine com um Campeão Mundial</h2>
           <p className="text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Faça parte de uma academia que forma campeões dentro e fora do tatame. 
-            Agende sua aula experimental e comece sua jornada no Jiu Jitsu.
+            Busque o refinamento técnico de quem vive o Jiu-Jitsu em alta performance. 
+            Agende sua aula particular ou traga seu filho para as turmas Kids.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-black px-10 py-4 hover:bg-gray-100 transition-all flex items-center gap-3 group">
-              <span>Agendar Aula Experimental</span>
+            <button className="bg-white text-black px-10 py-4 hover:bg-gray-100 transition-all flex items-center gap-3 group" onClick={() => window.open("https://wa.me/5511940007587", "_blank")}>
+              <span>Agendar Aula Particular</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="border-2 border-white text-white px-10 py-4 hover:bg-white hover:text-black transition-all">
-              Saiba Mais
+            <button className="border-2 border-white text-white px-10 py-4 hover:bg-white hover:text-black transition-all" onClick={() => window.open("https://www.instagram.com/jhonatasouzajj", "_blank")}>
+              Acessar Instagram
             </button>
           </div>
         </div>

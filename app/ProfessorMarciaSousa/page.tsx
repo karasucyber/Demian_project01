@@ -7,30 +7,30 @@ import { useState } from "react";
 export default function App() {
   const [hoveredAchievement, setHoveredAchievement] = useState<number | null>(null);
 
-const instructor = {
-  name: "Márcia Sousa da Silva",
-  belt: "Faixa Preta - 5º Grau",
-  image: "MárciaSousa.jpg",
-  yearsExperience: 13, // Experiência como professora desde 2013
-  championships: 12,
-  students: 180,
-  specialties: ["Jiu Jitsu Infantil", "Jiu Jitsu para Mulheres", "Alto Rendimento", "Pedagogia no Esporte"],
-  location: "São Paulo, Brasil",
-  quote: "A luta não é contra o outro, é dentro de mim. É sobre controlar a mente, dominar o corpo.",
-  trajectory: [
-    { year: "2013", title: "Início no Ensino", description: "Iniciou sua carreira como professora de Jiu Jitsu." },
-    { year: "2017", title: "Título Nacional", description: "Conquistou o topo do pódio no Campeonato Brasileiro." },
-    { year: "2018", title: "Cenário Mundial", description: "3º lugar no World Masters em Las Vegas (Peso e Absoluto)." },
-    { year: "2024", title: "Domínio No-Gi", description: "Consagrou-se Campeã Sul-Americana Sem Kimono." }
-  ],
-  achievements: [
-    { title: "Campeã Sul-Americana No-Gi", year: "2024", category: "CBJJ" },
-    { title: "3º Lugar World Masters", year: "2018-2019", category: "Peso e Absoluto" },
-    { title: "Campeã Brasileira", year: "2017", category: "CBJJ" },
-    { title: "Coordenadora Técnica", year: "Atual", category: "Gestão de Ensino" }
-  ],
-  bio: "Márcia traz para o tatame a experiência de quem atuou na educação infantil, transformando o Jiu Jitsu em uma ferramenta pedagógica poderosa. Como Faixa Preta 5º Grau, ela coordena o ensino na academia, garantindo que a disciplina da luta caminhe junto com a evolução pessoal de cada aluno, especialmente crianças e mulheres."
-};
+  const instructor = {
+    name: "Márcia Sousa da Silva",
+    belt: "Faixa Preta 5º Grau",
+    image: "MárciaSousa.jpg",
+    yearsExperience: 13,
+    championships: 3,
+    students: 180,
+    specialties: ["Jiu-Jitsu Infantil", "Fundamentos", "Jiu-Jitsu para Mulheres", "Alto Rendimento"],
+    location: "São Paulo, Brasil",
+    quote: "A luta não é contra o outro, é dentro de mim. É sobre controlar a mente, dominar o corpo. 🥋",
+    trajectory: [
+      { year: "Anterior", title: "Raízes na Educação", description: "Antes do Jiu-Jitsu, atuou profissionalmente como professora de educação infantil." },
+      { year: "2013", title: "Início no Ensino", description: "Começou sua jornada como professora de Jiu-Jitsu, unindo a disciplina da luta com a experiência pedagógica." },
+      { year: "2017", title: "Glória Nacional", description: "Consagrou-se Campeã Brasileira, um marco em sua carreira competitiva." },
+      { year: "Hoje", title: "Liderança", description: "Atua como coordenadora da academia, ensinando e guiando tanto crianças quanto adultos." }
+    ],
+    achievements: [
+      { title: "Campeã Brasileira", year: "2017", category: "Nacional" },
+      { title: "Campeã Sul-Americana NoGi", year: "2024", category: "Internacional" },
+      { title: "3º Lugar World Masters", year: "2018-2019", category: "Peso e Absoluto" },
+      { title: "Coordenadora Técnica", year: "Atual", category: "Escola Demian Maia" }
+    ],
+    bio: "Antes de se dedicar integralmente ao universo dos tatames, Márcia atuou profissionalmente como professora de educação infantil, uma experiência que reflete seu perfil multifacetado e sua paixão por ensinar, seja para crianças ou adultos. Sua trajetória é marcada pela dedicação em ambas as áreas, combinando a disciplina do Jiu-Jitsu com a experiência pedagógica. Ensina Jiu-Jitsu desde 2013 e atua como Coordenadora da academia."
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -50,7 +50,7 @@ const instructor = {
             <div className="lg:col-span-7 pt-12">
               <div className="flex items-center gap-3 mb-8">
                 <div className="h-px w-12 bg-white"></div>
-                <span className="text-gray-400 tracking-wider">PROFESSOR</span>
+                <span className="text-gray-400 tracking-wider">COORDENADORA E PROFESSORA</span>
               </div>
               
               <h1 className="text-white mb-6">
@@ -69,16 +69,16 @@ const instructor = {
               <div className="grid grid-cols-3 gap-4 mb-12">
                 <div className="bg-white/10 backdrop-blur-sm p-6 border border-white/20">
                   <div className="text-white mb-2">{instructor.championships}</div>
-                  <div className="text-gray-400">Títulos</div>
+                  <div className="text-gray-400">Títulos Principais</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm p-6 border border-white/20">
                   <div className="text-white mb-2">{instructor.yearsExperience}</div>
-                  <div className="text-gray-400">Anos de jiu jitsu</div>
+                  <div className="text-gray-400">Anos de Ensino</div>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <button className="bg-white text-black px-8 py-4 hover:bg-gray-100 transition-all flex items-center gap-2 group">
+                <button className="bg-white text-black px-8 py-4 hover:bg-gray-100 transition-all flex items-center gap-2 group" onClick={() => window.open("https://wa.me/5511945809260", "_blank")}>
                   <span>Agendar Aula</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -110,8 +110,8 @@ const instructor = {
                   <div className="flex items-center gap-3">
                     <Star className="w-6 h-6 text-black" />
                     <div>
-                      <div className="text-black">Referência Nacional</div>
-                      <div className="text-gray-500">Jiu Jitsu Competitivo</div>
+                      <div className="text-black">Excelência Pedagógica</div>
+                      <div className="text-gray-500">Adultos e Crianças</div>
                     </div>
                   </div>
                 </div>
@@ -156,8 +156,7 @@ const instructor = {
               </div>
               <h2 className="text-black mb-6">Áreas de Domínio</h2>
               <p className="text-gray-600 leading-relaxed">
-                Experiência comprovada nas principais vertentes do Jiu Jitsu, com metodologia 
-                única desenvolvida ao longo de décadas de prática e ensino.
+                Experiência comprovada nas principais vertentes do Jiu-Jitsu, com uma didática única desenvolvida através da sua vivência pedagógica e competitiva.
               </p>
             </div>
 
@@ -194,10 +193,10 @@ const instructor = {
             <h2 className="text-black">Jornada de Evolução</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {instructor.trajectory.map((milestone, idx) => (
               <div key={idx} className="group">
-                <div className="bg-white p-8 border border-gray-200 hover:border-black hover:shadow-2xl transition-all duration-300 relative">
+                <div className="bg-white p-8 border border-gray-200 hover:border-black hover:shadow-2xl transition-all duration-300 relative h-full">
                   {/* Year Badge */}
                   <div className="absolute -top-4 left-8 bg-black text-white px-4 py-1">
                     <span>{milestone.year}</span>
@@ -209,7 +208,7 @@ const instructor = {
                   </div>
                   
                   <h3 className="text-black mb-3">{milestone.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm">{milestone.description}</p>
 
                   {/* Decorative Corner */}
                   <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-black opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -231,7 +230,7 @@ const instructor = {
             </div>
             <h2 className="text-white mb-4">Títulos Conquistados</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Uma carreira marcada por conquistas em competições nacionais e internacionais
+              Uma carreira marcada por pódios nos maiores campeonatos de Jiu-Jitsu do mundo.
             </p>
           </div>
 
@@ -271,19 +270,19 @@ const instructor = {
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Award className="w-16 h-16 mx-auto mb-8 text-white" />
-          <h2 className="text-white mb-6">Treine com um Mestre</h2>
+          <h2 className="text-white mb-6">Aprenda com a Coordenadora</h2>
           <p className="text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Faça parte de uma academia que forma campeões dentro e fora do tatame. 
-            Agende sua aula experimental e comece sua jornada no Jiu Jitsu.
+            Faça parte de uma academia que forma campeões com técnica e valores. 
+            Agende sua aula experimental e comece sua jornada no Jiu-Jitsu.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-black px-10 py-4 hover:bg-gray-100 transition-all flex items-center gap-3 group">
+            <button className="bg-white text-black px-10 py-4 hover:bg-gray-100 transition-all flex items-center gap-3 group" onClick={() => window.open("https://wa.me/5511945809260", "_blank")}>
               <span>Agendar Aula Experimental</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="border-2 border-white text-white px-10 py-4 hover:bg-white hover:text-black transition-all">
-              Saiba Mais
+            <button className="border-2 border-white text-white px-10 py-4 hover:bg-white hover:text-black transition-all" onClick={() => window.open("https://wa.me/5511945809260", "_blank")}>
+              Falar no WhatsApp
             </button>
           </div>
         </div>

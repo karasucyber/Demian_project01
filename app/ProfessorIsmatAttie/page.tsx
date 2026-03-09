@@ -7,33 +7,34 @@ import { useState } from "react";
 export default function App() {
   const [hoveredAchievement, setHoveredAchievement] = useState<number | null>(null);
 
-const instructor = {
-  name: "Ismat Attie",
-  belt: "Faixa Marrom",
-  image: "IsmatAttie.jpg",
-  yearsExperience: 28, // Iniciou em 1998
-  championships: 6,
-  students: 130,
-  specialties: ["Jiu-Jitsu Infantil (Kids)", "Boxe Clássico", "Defesa Pessoal", "Fundamentos de Base"],
-  location: "São Paulo, Brasil",
-  quote: "Todo dia será melhor depois de um treino. Honra, lealdade e respeito acima de tudo.",
-  trajectory: [
-    { year: "1998", title: "A Era de Ouro", description: "Iniciou no Jiu-Jitsu treinando com lendas como Fernando Margarida." },
-    { year: "2023", title: "Legado Demian Maia", description: "Início da atuação como instrutor oficial na sede da escola." },
-    { year: "2024", title: "Ensino de Elite", description: "Docência em clubes e colégios renomados como Hebraica e Mackenzie." }
-  ],
-  achievements: [
-    { title: "3º Lugar Sul-Americano", year: "2021", category: "CBJJE" },
-    { title: "Especialista em Pedagogia Kids", year: "Referência", category: "Ensino Infantil" },
-    { title: "Instrutor Multidisciplinar", year: "Boxe/BJJ", category: "Técnico Formador" }
-  ],
-  bio: "Com quase três décadas de tatame, Ismat Attie é a prova de que o Jiu-Jitsu é um estilo de vida permanente. Tendo bebido da fonte de mestres históricos, Ismat hoje dedica seu vasto conhecimento à formação da nova geração. Especialista em aulas infantis e com uma base sólida no Boxe, ele foca no ensino dos valores marciais — honra, lealdade e respeito — garantindo que o aprendizado vá muito além da técnica."
-};
+  const instructor = {
+    name: "Ismat Attie",
+    belt: "Faixa Marrom",
+    image: "IsmatAttie.jpg",
+    yearsExperience: 28,
+    championships: 3,
+    students: 150,
+    specialties: ["Defesa Pessoal", "Jiu-Jitsu Infantil", "Fundamentos", "Boxe Integrado"],
+    location: "São Paulo, Brasil",
+    quote: "Todo dia será melhor depois de um treino! Honra, Lealdade e Respeito! Oss.",
+    trajectory: [
+      { year: "1998", title: "O Início", description: "Iniciou sua jornada nas artes marciais, construindo uma base sólida ao longo de quase três décadas de dedicação." },
+      { year: "Mestres", title: "Linhagem de Peso", description: "Foi forjado e moldado por mestres lendários como Fernando Pontes Margarida, Nelson Lopes e Demian Maia." },
+      { year: "2023", title: "A Arte de Ensinar", description: "Iniciou oficialmente sua trajetória como professor e instrutor, focado em transmitir seu vasto conhecimento." },
+      { year: "Hoje", title: "Atuação Multi-Clubes", description: "Ensina na Escola Demian Maia, Clube Hebraica, Bodytech, Alto de Pinheiros e Colégio Mackenzie." }
+    ],
+    achievements: [
+      { title: "Medalhista Sul-Americano", year: "2021", category: "CBJJE (3º Lugar)" },
+      { title: "Instrutor Multi-Clubes", year: "Atual", category: "Hebraica, Bodytech, Mackenzie" },
+      { title: "Especialista Kids e Adultos", year: "Atual", category: "Metodologia DM Adaptada" },
+      { title: "Formação Multi-Marcial", year: "Vivência", category: "Jiu-Jitsu e Boxe" }
+    ],
+    bio: "Com uma trajetória que se iniciou em 1998, Ismat Attie carrega uma bagagem marcial de quase três décadas. Faixa Marrom forjado por mestres renomados como Fernando Margarida, Nelson Lopes e Demian Maia, ele atua ativamente como Instrutor desde o início de 2023. Além da Escola Demian Maia, Ismat dissemina a arte suave e a defesa pessoal em instituições de prestígio, atendendo desde o público infantil até adultos nos níveis de fundamentos e intermediário."
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section - Assimétrico */}
       <section className="relative min-h-screen bg-black overflow-hidden">
-        {/* Grid Background */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
@@ -43,11 +44,10 @@ const instructor = {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left Content */}
             <div className="lg:col-span-7 pt-12">
               <div className="flex items-center gap-3 mb-8">
                 <div className="h-px w-12 bg-white"></div>
-                <span className="text-gray-400 tracking-wider">PROFESSOR</span>
+                <span className="text-gray-400 tracking-wider">INSTRUTOR E PROFESSOR</span>
               </div>
               
               <h1 className="text-white mb-6">
@@ -62,21 +62,20 @@ const instructor = {
                 {instructor.bio}
               </p>
 
-              {/* Stats Cards */}
               <div className="grid grid-cols-3 gap-4 mb-12">
                 <div className="bg-white/10 backdrop-blur-sm p-6 border border-white/20">
-                  <div className="text-white mb-2">{instructor.championships}</div>
-                  <div className="text-gray-400">Títulos</div>
+                  <div className="text-white mb-2">{instructor.yearsExperience}</div>
+                  <div className="text-gray-400">Anos de Tatame</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm p-6 border border-white/20">
-                  <div className="text-white mb-2">{instructor.yearsExperience}</div>
-                  <div className="text-gray-400">Anos de jiu jitsu</div>
+                  <div className="text-white mb-2">+5</div>
+                  <div className="text-gray-400">Polos de Ensino</div>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <button className="bg-white text-black px-8 py-4 hover:bg-gray-100 transition-all flex items-center gap-2 group">
-                  <span>Agendar Aula</span>
+                <button className="bg-white text-black px-8 py-4 hover:bg-gray-100 transition-all flex items-center gap-2 group" onClick={() => window.open("https://www.instagram.com/ismatattie", "_blank")}>
+                  <span>Ver Instagram</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <div className="flex items-center gap-2 text-gray-400">
@@ -86,10 +85,8 @@ const instructor = {
               </div>
             </div>
 
-            {/* Right Image */}
             <div className="lg:col-span-5">
               <div className="relative">
-                {/* Decorative Elements */}
                 <div className="absolute -top-8 -right-8 w-32 h-32 border border-white/20"></div>
                 <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-white/5"></div>
                 
@@ -102,13 +99,12 @@ const instructor = {
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                 </div>
 
-                {/* Floating Badge */}
                 <div className="absolute -bottom-6 left-8 bg-white p-6 shadow-2xl">
                   <div className="flex items-center gap-3">
                     <Star className="w-6 h-6 text-black" />
                     <div>
-                      <div className="text-black">Referência Nacional</div>
-                      <div className="text-gray-500">Jiu Jitsu Competitivo</div>
+                      <div className="text-black">Tradição e Base</div>
+                      <div className="text-gray-500">Adultos e Infantil</div>
                     </div>
                   </div>
                 </div>
@@ -117,14 +113,12 @@ const instructor = {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/60 flex flex-col items-center gap-2">
           <span className="text-sm tracking-wider">ROLE PARA BAIXO</span>
           <div className="w-px h-16 bg-gradient-to-b from-white/60 to-transparent"></div>
         </div>
       </section>
 
-      {/* Quote Section - Full Width */}
       <section className="relative py-32 bg-gray-900">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -141,11 +135,9 @@ const instructor = {
         </div>
       </section>
 
-      {/* Specialties Section - Modern Grid */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Left - Title */}
             <div className="flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-12 bg-black"></div>
@@ -153,12 +145,10 @@ const instructor = {
               </div>
               <h2 className="text-black mb-6">Áreas de Domínio</h2>
               <p className="text-gray-600 leading-relaxed">
-                Experiência comprovada nas principais vertentes do Jiu Jitsu, com metodologia 
-                única desenvolvida ao longo de décadas de prática e ensino.
+                Experiência sólida na construção de fundamentos para iniciantes, aulas dinâmicas para o público infantil e integração da defesa pessoal com técnicas de striking.
               </p>
             </div>
 
-            {/* Right - Specialties Grid */}
             <div className="grid grid-cols-2 gap-4">
               {instructor.specialties.map((specialty, idx) => (
                 <div key={idx} className="group relative overflow-hidden bg-gray-50 p-8 border border-gray-200 hover:border-black transition-all duration-500">
@@ -176,9 +166,7 @@ const instructor = {
         </div>
       </section>
 
-      {/* Trajectory - Timeline Moderna */}
       <section className="py-24 bg-gray-100 relative overflow-hidden">
-        {/* Decorative Line */}
         <div className="absolute left-0 top-1/2 w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -191,24 +179,21 @@ const instructor = {
             <h2 className="text-black">Jornada de Evolução</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {instructor.trajectory.map((milestone, idx) => (
               <div key={idx} className="group">
-                <div className="bg-white p-8 border border-gray-200 hover:border-black hover:shadow-2xl transition-all duration-300 relative">
-                  {/* Year Badge */}
+                <div className="bg-white p-8 border border-gray-200 hover:border-black hover:shadow-2xl transition-all duration-300 relative h-full">
                   <div className="absolute -top-4 left-8 bg-black text-white px-4 py-1">
                     <span>{milestone.year}</span>
                   </div>
                   
-                  {/* Number */}
                   <div className="text-gray-200 group-hover:text-gray-300 text-6xl mb-4 transition-colors">
                     {String(idx + 1).padStart(2, '0')}
                   </div>
                   
                   <h3 className="text-black mb-3">{milestone.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm">{milestone.description}</p>
 
-                  {/* Decorative Corner */}
                   <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-black opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
               </div>
@@ -217,18 +202,17 @@ const instructor = {
         </div>
       </section>
 
-      {/* Achievements - Interactive Cards */}
       <section className="py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="h-px w-12 bg-white"></div>
-              <span className="text-gray-400 tracking-wider">CONQUISTAS</span>
+              <span className="text-gray-400 tracking-wider">DESTAQUES</span>
               <div className="h-px w-12 bg-white"></div>
             </div>
-            <h2 className="text-white mb-4">Títulos Conquistados</h2>
+            <h2 className="text-white mb-4">Marcos da Carreira</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Uma carreira marcada por conquistas em competições nacionais e internacionais
+              Resultados no tatame e a confiança de grandes instituições na sua capacidade de ensino.
             </p>
           </div>
 
@@ -252,7 +236,6 @@ const instructor = {
                 </h3>
                 <p className="text-gray-400">{achievement.category}</p>
 
-                {/* Hover Effect */}
                 <div className={`absolute bottom-0 left-0 h-1 bg-white transition-all duration-300 ${hoveredAchievement === idx ? 'w-full' : 'w-0'}`}></div>
               </div>
             ))}
@@ -260,7 +243,6 @@ const instructor = {
         </div>
       </section>
 
-      {/* CTA Section - Bold */}
       <section className="relative py-32 bg-black overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
@@ -268,19 +250,19 @@ const instructor = {
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Award className="w-16 h-16 mx-auto mb-8 text-white" />
-          <h2 className="text-white mb-6">Treine com um Mestre</h2>
+          <h2 className="text-white mb-6">Treine com Constância e Disciplina</h2>
           <p className="text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Faça parte de uma academia que forma campeões dentro e fora do tatame. 
-            Agende sua aula experimental e comece sua jornada no Jiu Jitsu.
+            Desenvolva seus fundamentos e construa uma base inabalável no tatame.
+            Agende sua aula experimental.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-black px-10 py-4 hover:bg-gray-100 transition-all flex items-center gap-3 group">
+            <button className="bg-white text-black px-10 py-4 hover:bg-gray-100 transition-all flex items-center gap-3 group" onClick={() => window.open("https://wa.me/5511945809260", "_blank")}>
               <span>Agendar Aula Experimental</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="border-2 border-white text-white px-10 py-4 hover:bg-white hover:text-black transition-all">
-              Saiba Mais
+            <button className="border-2 border-white text-white px-10 py-4 hover:bg-white hover:text-black transition-all" onClick={() => window.open("https://wa.me/5511945809260", "_blank")}>
+              Falar no WhatsApp
             </button>
           </div>
         </div>
