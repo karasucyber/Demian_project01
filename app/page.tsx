@@ -290,7 +290,7 @@ export function ProgramsSection() {
             <div className="mt-8 pt-8 border-t border-zinc-100">
               <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-4">Acompanhe a Evolução</p>
               <Button 
-                onClick={() => window.open("/quadro-graduacao.pdf", "_blank")}
+                onClick={() => window.open("/QUADRO GRADUAÇÃO_DM_2026_English_18_02_26 (1).pdf", "_blank")}
                 className="w-full bg-black text-white hover:bg-zinc-800 text-[11px] font-bold uppercase tracking-widest py-7 rounded-none flex items-center justify-center gap-3 transition-transform hover:-translate-y-1"
               >
                 <Download className="h-4 w-4" />
