@@ -1,37 +1,24 @@
-"use client"; 
+"use client";
+
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    window.location.replace("historia.html");
+  }, []);
+
   return (
     <>
       <main className="main-container">
         <div className="card">
-
-          <h1>Site em Manutenção</h1>
-          <p>Estamos trabalhando para melhorar nosso site. Voltaremos em breve!</p>
-          <p>
-            Enquanto isso, se precisar de ajuda ou tiver alguma dúvida, entre em
-            contato conosco pelo WhatsApp.
-          </p>
-
-          <a
-            href="https://api.whatsapp.com/send?phone=5511945809260&text=Ol%C3%A1!%20Vim%20pelo%20site."
-            className="whatsapp-button"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Falar no WhatsApp
-          </a>
+          <h1>Redirecionando...</h1>
+          <p>Aguarde enquanto levamos você para a página de história do Jiu-Jitsu.</p>
         </div>
       </main>
 
-      {/* A mágica acontece aqui!
-        Usamos <style jsx> para adicionar o CSS diretamente no componente.
-        Este CSS só se aplica a esta página, evitando conflitos.
-      */}
       <style jsx>{`
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-        /* Estilos globais para a página */
         :global(body) {
           font-family: 'Roboto', sans-serif;
           background-color: #f4f4f4;
@@ -65,42 +52,6 @@ export default function Home() {
         p {
           font-size: 18px;
           line-height: 1.6;
-        }
-
-        .maintenance-icon {
-          width: 80px;
-          height: 80px;
-          margin-bottom: 20px;
-          color: #d9534f;
-          animation: spin 3s linear infinite;
-          transform-origin: center center;
-        }
-
-        /* Animação de giro */
-        @keyframes spin {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-
-        .whatsapp-button {
-          display: inline-block;
-          background-color: #25d366;
-          color: #fff;
-          padding: 15px 30px;
-          text-decoration: none;
-          border-radius: 5px;
-          font-weight: bold;
-          font-size: 16px;
-          margin-top: 25px;
-          transition: background-color 0.3s;
-        }
-
-        .whatsapp-button:hover {
-          background-color: #128c7e;
         }
       `}</style>
     </>
