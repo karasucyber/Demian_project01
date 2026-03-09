@@ -5,6 +5,7 @@ import {
   Menu, X, Award, Users, Trophy, Dumbbell,
   Shield, Brain, Instagram, ArrowRight,
   Phone, MapPin, Youtube, MessageCircle, ChevronRight,
+  Download, ShoppingBag,
   Calendar
 } from "lucide-react";
 import { Button } from "./components/ui/button";
@@ -22,9 +23,12 @@ export function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Metodologia", href: "#metodologia" },
-    { name: "Professores", href: "/nossosprofessores" },
+    { name: "Home", href: "#home", external: false },
+    { name: "Metodologia", href: "#metodologia", external: false },
+    { name: "Aulas", href: "#aulas", external: false },
+    { name: "Professores", href: "/nossosprofessores", external: false },
+    { name: "Loja Oficial", href: "https://montink.com/escolademianmaia", external: true },
+    { name: "Kimonos", href: "https://www.vulkanfc.com/demian-maia", external: true },
   ];
 
   return (
@@ -47,19 +51,22 @@ export function Navbar() {
             </a>
           </div>
 
-          <div className="hidden md:flex md:items-center md:gap-12">
+          <div className="hidden lg:flex lg:items-center lg:gap-8">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className={`text-[11px] font-bold uppercase tracking-widest transition-colors relative after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 hover:after:w-full after:transition-all after:duration-300 ${scrolled ? "text-zinc-500 hover:text-black after:bg-black" : "text-zinc-300 hover:text-white after:bg-white"}`}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                className={`text-[11px] font-bold uppercase tracking-widest transition-colors relative after:absolute after:-bottom-2 after:left-0 after:h-[1px] after:w-0 hover:after:w-full after:transition-all after:duration-300 flex items-center gap-1 ${scrolled ? "text-zinc-500 hover:text-black after:bg-black" : "text-zinc-300 hover:text-white after:bg-white"}`}
               >
+                {item.external && <ShoppingBag className="h-3 w-3" />}
                 {item.name}
               </a>
             ))}
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button 
               onClick={() => window.open("https://wa.me/5511945809260", "_blank")}
               className={`text-[11px] font-bold uppercase tracking-widest px-8 py-6 rounded-none transition-all duration-500 ${scrolled ? "bg-black text-white hover:bg-zinc-800" : "bg-white text-black hover:bg-zinc-200"}`}
@@ -69,7 +76,7 @@ export function Navbar() {
           </div>
 
           <button
-            className={`md:hidden p-2 transition-colors ${scrolled ? "text-black" : "text-white"}`}
+            className={`lg:hidden p-2 transition-colors ${scrolled ? "text-black" : "text-white"}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -77,21 +84,27 @@ export function Navbar() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-zinc-100 py-8 px-6 shadow-2xl flex flex-col gap-6">
+          <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-zinc-100 py-8 px-6 shadow-2xl flex flex-col gap-6">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-bold uppercase tracking-widest text-zinc-500 hover:text-black transition-colors"
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                className="text-sm font-bold uppercase tracking-widest text-zinc-500 hover:text-black transition-colors flex items-center gap-2"
                 onClick={() => setIsMenuOpen(false)}
               >
+                {item.external && <ShoppingBag className="h-4 w-4" />}
                 {item.name}
               </a>
             ))}
-            <div className="hidden md:block">
+            <div className="block mt-4">
               <Button 
-                onClick={() => window.open("https://wa.me/5511945809260", "_blank")}
-                className={`text-[11px] font-bold uppercase tracking-widest px-8 py-6 rounded-none transition-all duration-500 ${scrolled ? "bg-black text-white hover:bg-zinc-800" : "bg-white text-black hover:bg-zinc-200"}`}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  window.open("https://wa.me/5511945809260", "_blank");
+                }}
+                className="w-full bg-black text-white hover:bg-zinc-800 text-[11px] font-bold uppercase tracking-widest py-6 rounded-none transition-all duration-500"
               >
                 Agendar Aula
               </Button>
@@ -141,22 +154,22 @@ export function HeroSection() {
 
 export function StatsSection() {
   const stats = [
-    { id: 1, icon: Users, value: "600+", label: "Alunos Ativos" },
+    { id: 1, icon: Users, value: "1200+", label: "Alunos Ativos" },
     { id: 2, icon: Award, value: "15+", label: "Anos de Excelência" },
     { id: 3, isGoogleLogo: true, value: "98%", label: "Satisfação" },
-    { id: 4, icon: Calendar, value: "20+", label: "Aulas por Semana" },
+    { id: 4, icon: Calendar, value: "200+", label: "Aulas por Semana" },
     { id: 5, icon: Trophy, value: "100+", label: "Títulos Conquistados" },
     { id: 6, icon: Dumbbell, value: "1200m²", label: "Área de Treino" }
   ];
 
   return (
-    <section className="border-b border-zinc-200 bg-white">
+    <section className="border-b border-zinc-200 bg-gray-50">
       <div className="container mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-x divide-y md:divide-y-0 divide-zinc-200">
           {stats.map((stat) => {
             const Icon = stat.icon;
             return (
-              <div key={stat.id} className="p-10 flex flex-col items-center justify-center text-center group hover:bg-zinc-50 transition-colors duration-500">
+              <div key={stat.id} className="p-10 flex flex-col items-center justify-center text-center group hover:bg-white transition-colors duration-500">
                 {stat.isGoogleLogo ? (
                   <svg className="h-6 w-6 mb-4 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -184,42 +197,30 @@ export function StatsSection() {
 
 export function PhilosophySection() {
   return (
-    <section id="metodologia" className="py-32 bg-zinc-50">
+    <section id="metodologia" className="py-32 bg-zinc-50 border-b border-zinc-200">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           
           <div>
             <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 mb-6">
-              Metodologia Demian Maia
+              Metodologia
             </h2>
-            <h3 className="text-4xl md:text-6xl font-extrabold text-black tracking-tighter mb-8 leading-tight">
-              A ARTE DA <br />EFICIÊNCIA.
+            <h3 className="text-4xl md:text-5xl font-extrabold text-black tracking-tighter mb-10 leading-tight uppercase">
+              ESCOLA DM
             </h3>
             
-            <div className="space-y-10">
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 mt-1">
-                  <Shield className="h-8 w-8 text-black" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-black mb-2 uppercase tracking-wide">Defesa Pessoal Real</h4>
-                  <p className="text-zinc-600 font-light leading-relaxed">
-                    Metodologia comprovada para situações reais. Aprenda a neutralizar a força bruta através da técnica, inteligência e controle de distância.
-                  </p>
-                </div>
-              </div>
+            <div className="space-y-8">
+              <p className="text-zinc-600 font-light leading-relaxed text-lg">
+                Nossa metodologia valoriza a evolução natural do aluno, respeitando seu estágio de desenvolvimento cognitivo, motor e técnico. Por isso, organizamos as turmas em três níveis — fundamentos, intermediário e avançado — garantindo que cada praticante treine em um ambiente seguro, coerente com sua experiência e com desafios adequados ao seu momento.
+              </p>
               
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 mt-1">
-                  <Brain className="h-8 w-8 text-black" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-black mb-2 uppercase tracking-wide">Mindset Inabalável</h4>
-                  <p className="text-zinc-600 font-light leading-relaxed">
-                    O tatame forja o caráter. Desenvolva resiliência, foco absoluto e controle emocional para aplicar em todos os aspectos da sua vida.
-                  </p>
-                </div>
-              </div>
+              <p className="text-zinc-600 font-light leading-relaxed text-lg">
+                A metodologia da Escola Demian Maia foi criada pelo próprio Demian, unindo sua visão única do Jiu-Jitsu como arte marcial, defesa pessoal e ferramenta de desenvolvimento humano. Com mais de 30 anos de experiência no esporte, ele estruturou um sistema de ensino sólido, eficiente e acessível, baseado em tudo o que viveu como atleta, professor e referência mundial.
+              </p>
+              
+              <p className="text-zinc-600 font-light leading-relaxed text-lg">
+                O resultado é uma jornada de aprendizado clara, progressiva e motivadora, onde o aluno se sente confiante para evoluir e vivenciar o Jiu-Jitsu de forma completa.
+              </p>
             </div>
           </div>
 
@@ -247,15 +248,57 @@ export function PhilosophySection() {
 
 export function ProgramsSection() {
   return (
-    <section className="py-16 bg-white">
+    <section id="aulas" className="py-24 bg-gray-50 border-y border-zinc-100">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="bg-black text-white rounded-2xl p-10 md:p-14 flex flex-col items-center text-center max-w-5xl mx-auto shadow-2xl">
-          <h3 className="text-2xl md:text-3xl font-extrabold tracking-tighter mb-4 uppercase">
-            Jiu-Jitsu Para Todas as Idades
-          </h3>
-          <p className="text-zinc-300 text-lg font-light max-w-3xl leading-relaxed">
-            Oferecemos turmas exclusivas com metodologias adaptadas para <strong className="text-white font-bold">Adultos</strong>, <strong className="text-white font-bold">Crianças</strong> e <strong className="text-white font-bold">Melhor Idade</strong>. O tatame é um ambiente de evolução constante e seguro para todos.
-          </p>
+        <div className="text-center mb-16">
+          <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-400 mb-4">Nossos Programas</h2>
+          <h3 className="text-4xl md:text-5xl font-extrabold text-black tracking-tighter">TIPOS DE AULAS</h3>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          
+          <div className="bg-white p-10 md:p-14 rounded-2xl shadow-xl border border-zinc-100 flex flex-col">
+            <h4 className="text-2xl font-extrabold mb-6 uppercase tracking-tight text-black">Aulas para Adultos</h4>
+            <p className="text-zinc-600 font-light mb-8 text-lg leading-relaxed">
+              As turmas adultas são organizadas por nível técnico e também contam com uma turma exclusiva para mulheres, criando um ambiente acolhedor, seguro e motivador para todas as alunas.
+            </p>
+            
+            <ul className="space-y-4 mb-10 font-bold text-black uppercase tracking-wide text-sm">
+              <li className="flex items-center gap-3"><ChevronRight className="h-4 w-4 text-zinc-400"/> 1. Fundamentos</li>
+              <li className="flex items-center gap-3"><ChevronRight className="h-4 w-4 text-zinc-400"/> 2. Intermediário</li>
+              <li className="flex items-center gap-3"><ChevronRight className="h-4 w-4 text-zinc-400"/> 3. Avançado</li>
+              <li className="flex items-center gap-3"><ChevronRight className="h-4 w-4 text-zinc-400"/> 4. Feminino</li>
+            </ul>
+
+            <div className="mt-auto bg-zinc-50 p-6 rounded-xl border border-zinc-100">
+              <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-2">Observação Importante</p>
+              <p className="text-sm text-zinc-700 leading-relaxed">
+                Todas as turmas adultas estão disponíveis nas modalidades: <br />
+                <strong className="text-black">Com Kimono</strong> e <strong className="text-black">Sem Kimono (No-Gi)</strong>.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white p-10 md:p-14 rounded-2xl shadow-xl border border-zinc-100 flex flex-col justify-between">
+            <div>
+              <h4 className="text-2xl font-extrabold mb-6 uppercase tracking-tight text-black">Aulas Infantis / Kids</h4>
+              <p className="text-zinc-600 font-light mb-10 text-lg leading-relaxed">
+                As turmas infantis são organizadas por faixa etária, garantindo um aprendizado seguro, lúdico e adequado a cada fase do desenvolvimento físico e cognitivo da criança.
+              </p>
+            </div>
+            
+            <div className="mt-8 pt-8 border-t border-zinc-100">
+              <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-4">Acompanhe a Evolução</p>
+              <Button 
+                onClick={() => window.open("/quadro-graduacao.pdf", "_blank")}
+                className="w-full bg-black text-white hover:bg-zinc-800 text-[11px] font-bold uppercase tracking-widest py-7 rounded-none flex items-center justify-center gap-3 transition-transform hover:-translate-y-1"
+              >
+                <Download className="h-4 w-4" />
+                Quadro de Graduação (PDF)
+              </Button>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -264,14 +307,38 @@ export function ProgramsSection() {
 
 export function InstructorsSection() {
   const instructors = [
-    { id: 1, imageUrl: "/NelsonLopes.jpg", name: "Nelson Lopes", belt: "Faixa Preta 3º Grau" },
-    { id: 2, imageUrl: "/MárciaSousa.jpg", name: "Márcia Sousa", belt: "Faixa Preta 5º Grau" },
-    { id: 3, imageUrl: "/LucasBarrosCosta.jpg", name: "Lucas Costa", belt: "Faixa Preta 3º Grau" },
-    { id: 4, imageUrl: "/JhonataMontoro.jpg", name: "Jhonata Montoro", belt: "Faixa Marrom" },
+    { 
+      id: 1, 
+      imageUrl: "/MárciaSousa.jpg", 
+      name: "Márcia Sousa", 
+      belt: "Faixa Preta 5º Grau",
+      text: "Texto de apresentação da professora Márcia Sousa. Detalhes sobre sua trajetória, experiência técnica e liderança."
+    },
+    { 
+      id: 2, 
+      imageUrl: "/NelsonLopes.jpg", 
+      name: "Nelson Lopes", 
+      belt: "Faixa Preta 3º Grau",
+      text: "Texto de apresentação do professor Nelson Lopes. Foco metodológico e conquistas ao longo da carreira no Jiu-Jitsu."
+    },
+    { 
+      id: 3, 
+      imageUrl: "/LucasBarrosCosta.jpg", 
+      name: "Lucas Costa", 
+      belt: "Faixa Preta 3º Grau",
+      text: "Texto de apresentação do professor Lucas Costa. Detalhamento de sua atuação e dedicação ao desenvolvimento dos alunos."
+    },
+    { 
+      id: 4, 
+      imageUrl: "/JhonataMontoro.jpg", 
+      name: "Jhonata Montoro", 
+      belt: "Faixa Marrom",
+      text: "Texto de apresentação do professor Jhonata Montoro. Trajetória competitiva e enfoque no ensino prático no tatame."
+    },
   ];
 
   return (
-    <section className="py-32 bg-zinc-50">
+    <section className="py-32 bg-zinc-50 border-b border-zinc-100">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div>
@@ -288,23 +355,26 @@ export function InstructorsSection() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {instructors.map((instructor) => (
-            <div key={instructor.id} className="group cursor-pointer">
-              <div className="relative aspect-[3/4] overflow-hidden bg-zinc-100 mb-6">
+            <div key={instructor.id} className="group flex flex-col">
+              <div className="relative aspect-[3/4] overflow-hidden bg-white mb-6 p-2 rounded-lg shadow-sm border border-zinc-100">
                 <ImageWithFallback
                   src={instructor.imageUrl}
                   alt={instructor.name}
-                  className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover rounded filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
               </div>
-              <div>
+              <div className="flex-grow flex flex-col">
                 <h4 className="text-xl font-bold tracking-tight text-black uppercase mb-1">
                   {instructor.name}
                 </h4>
-                <p className="text-xs font-medium text-zinc-500 uppercase tracking-widest">
+                <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-4">
                   {instructor.belt}
+                </p>
+                <p className="text-sm text-zinc-600 font-light leading-relaxed">
+                  {instructor.text}
                 </p>
               </div>
             </div>
@@ -317,8 +387,9 @@ export function InstructorsSection() {
 
 export function CTASection() {
   return (
-    <section className="py-32 bg-black text-white">
-      <div className="container mx-auto px-6 lg:px-12 text-center">
+    <section className="py-32 bg-black text-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+      <div className="container mx-auto px-6 lg:px-12 text-center relative z-10">
         <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 mb-6">
           Dê o Primeiro Passo
         </h2>
@@ -343,12 +414,12 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-zinc-950 text-white pt-24 pb-12">
+    <footer className="bg-zinc-950 text-white pt-24 pb-12 border-t border-zinc-900">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           
           <div className="lg:col-span-2">
-            <div className="w-48 h-48 p-4 flex items-center justify-center rounded-2xl transition-transform duration-500 mb-6 shadow-xl">
+            <div className="w-48 h-48 p-4 flex items-center justify-center rounded-2xl transition-transform duration-500 mb-6 shadow-xl bg-black border border-zinc-800 hover:border-zinc-700">
               <img 
                 src="logo Demian Maia 3 Branco.png" 
                 alt="Logo DM" 
@@ -360,23 +431,38 @@ export function Footer() {
               Alta performance, disciplina e excelência técnica. Forjando campeões no tatame e na vida desde 2008.
             </p>
             <div className="flex gap-4">
-              <a href="https://www.instagram.com/escolademianmaia/" className="w-10 h-10 border border-zinc-800 flex items-center justify-center hover:bg-white hover:text-black transition-all">
-                <Instagram className="h-4 w-4" />
+              <a href="#" className="w-10 h-10 border border-zinc-800 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all group">
+                <Instagram className="h-4 w-4 text-zinc-600 group-hover:text-black" />
+              </a>
+              <a href="#" className="w-10 h-10 border border-zinc-800 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all group">
+                <Youtube className="h-4 w-4 text-zinc-600 group-hover:text-black" />
               </a>
             </div>
           </div>
 
           <div>
-            <h3 className="font-bold text-[10px] uppercase tracking-[0.2em] text-zinc-500 mb-8">Navegação</h3>
+            <h3 className="font-bold text-[10px] uppercase tracking-[0.2em] text-zinc-500 mb-8">Navegação & Lojas</h3>
             <ul className="space-y-4">
-              {['Home', 'Metodologia', 'Professores', 'Estrutura'].map((item) => (
+              {['Home', 'Metodologia', 'Aulas', 'Professores'].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-sm text-zinc-300 hover:text-white transition-colors flex items-center gap-2 group">
+                  <a href={`#${item.toLowerCase()}`} className="text-sm text-zinc-300 hover:text-white transition-colors flex items-center gap-2 group">
                     <ArrowRight className="h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-zinc-500" />
                     {item}
                   </a>
                 </li>
               ))}
+              <li className="pt-4 mt-4 border-t border-zinc-800">
+                <a href="https://montink.com/escolademianmaia" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-300 hover:text-white transition-colors flex items-center gap-2 group">
+                  <ShoppingBag className="h-4 w-4 text-zinc-500 group-hover:text-white transition-colors" />
+                  Loja Oficial (Montink)
+                </a>
+              </li>
+              <li>
+                <a href="https://www.vulkanfc.com/demian-maia" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-300 hover:text-white transition-colors flex items-center gap-2 group">
+                  <ShoppingBag className="h-4 w-4 text-zinc-500 group-hover:text-white transition-colors" />
+                  Kimonos (Vulkan)
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -413,12 +499,12 @@ export function Footer() {
 
 export function FloatingSocialButtons() {
   return (
-    <div className="fixed right-6 bottom-6 z-50 flex flex-col gap-3">
+    <div className="fixed right-6 bottom-6 z-50 flex flex-col gap-3 hover:scale-105 transition-transform duration-300">
       <a
         href="https://wa.me/5511945809260"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-14 h-14 bg-green-500 flex items-center justify-center text-white border border-green-600 hover:bg-green-600 transition-all duration-300 shadow-2xl hover:-translate-y-1 rounded-full"
+        className="w-14 h-14 bg-green-500 flex items-center justify-center text-white border-2 border-green-600 hover:bg-green-600 transition-all duration-300 shadow-2xl hover:-translate-y-1 rounded-full"
       >
         <MessageCircle className="h-6 w-6" />
       </a>
@@ -428,7 +514,7 @@ export function FloatingSocialButtons() {
 
 export default function DemianLandingPage() {
   return (
-    <main className="min-h-screen bg-white font-sans selection:bg-black selection:text-white">
+    <main className="min-h-screen bg-gray-50 font-sans selection:bg-black selection:text-white">
       <Navbar />
       <HeroSection />
       <StatsSection />
