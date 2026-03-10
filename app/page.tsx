@@ -6,7 +6,7 @@ import {
   Shield, Brain, Instagram, ArrowRight,
   Phone, MapPin, Youtube, MessageCircle, ChevronRight,
   Download, ShoppingBag,
-  Calendar
+  Calendar, LayoutGrid
 } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Card } from "./components/ui/card";
@@ -154,12 +154,12 @@ export function HeroSection() {
 
 export function StatsSection() {
   const stats = [
-    { id: 1, icon: Users, value: "1200+", label: "Alunos Ativos" },
-    { id: 2, icon: Award, value: "15+", label: "Anos de Excelência" },
-    { id: 3, isGoogleLogo: true, value: "98%", label: "Satisfação" },
-    { id: 4, icon: Calendar, value: "200+", label: "Aulas por Semana" },
-    { id: 5, icon: Trophy, value: "100+", label: "Títulos Conquistados" },
-    { id: 6, icon: Dumbbell, value: "1200m²", label: "Área de Treino" }
+    { id: 1, icon: Users, value: "+420", label: "Alunos Ativos" },
+    { id: 2, icon: Award, value: "6 Anos", label: "de Excelência" },
+    { id: 3, isGoogleLogo: true, value: "5.0", label: "Estrelas no Google" },
+    { id: 4, icon: Calendar, value: "88", label: "Aulas Semanais" },
+    { id: 5, icon: Dumbbell, value: "250m²", label: "Área de Tatame" },
+    { id: 6, icon: LayoutGrid, value: "750m²", label: "Infraestrutura" }
   ];
 
   return (
@@ -290,7 +290,7 @@ export function ProgramsSection() {
             <div className="mt-8 pt-8 border-t border-zinc-100">
               <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-4">Acompanhe a Evolução</p>
               <Button 
-                onClick={() => window.open("/QUADRO GRADUAÇÃO_DM_2026_Portugues_18_02_26.pdf", "_blank")}
+                onClick={() => window.open("/QUADRO GRADUAÇÃO_DM_2026_Portugues_18_02_26.pdf", "_blank")}
                 className="w-full bg-black text-white hover:bg-zinc-800 text-[11px] font-bold uppercase tracking-widest py-7 rounded-none flex items-center justify-center gap-3 transition-transform hover:-translate-y-1"
               >
                 <Download className="h-4 w-4" />
@@ -514,7 +514,8 @@ export function FloatingSocialButtons() {
 
 export default function DemianLandingPage() {
   return (
-<main className="min-h-screen bg-[#fcfcfc] font-sans selection:bg-black selection:text-white">      <Navbar />
+    <main className="min-h-screen bg-[#fcfcfc] font-sans selection:bg-black selection:text-white">
+      <Navbar />
       <HeroSection />
       <StatsSection />
       <PhilosophySection />
